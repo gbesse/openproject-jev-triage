@@ -25,3 +25,5 @@ class OpenProjectTests(unittest.TestCase):
         self.assertIn('/api/v3/work_packages/8/activities',requests[0].full_url)
         self.assertIn('Jev review',json.loads(requests[0].data)['comment']['raw'])
         self.assertEqual(requests[0].get_method(),'POST')
+        import base64
+        self.assertEqual(requests[0].get_header('Authorization'),'Basic '+base64.b64encode(b'apikey:secret').decode())
