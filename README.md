@@ -1,6 +1,6 @@
 # OpenProject Jev Triage
 
-Experimental community alpha v0.1.0 · MIT.
+Experimental community alpha v0.1.1 · MIT.
 
 ## Français
 
@@ -16,6 +16,8 @@ Variables serveur : `TYPESAFE_API_KEY, OPENPROJECT_WEBHOOK_SECRET, OPENPROJECT_U
 
 Créer un webhook signé vers `/webhook` sur la création de work packages ; utiliser un compte API autorisé à ajouter des commentaires. Ne pas abonner ce service aux commentaires qu’il crée.
 
+L’appel API utilise l’authentification Basic avec le nom `apikey`, compatible avec les versions d’OpenProject antérieures à la prise en charge des jetons Bearer. Les charges JSON invalides reçoivent une réponse 400.
+
 ## English
 
 A service verifies OpenProject webhooks for new work packages, evaluates request completeness, and adds a review comment. It does not change status.
@@ -30,6 +32,8 @@ Server variables: `TYPESAFE_API_KEY, OPENPROJECT_WEBHOOK_SECRET, OPENPROJECT_URL
 
 Create a signed webhook to `/webhook` for work package creation; use an API account allowed to add comments. Do not subscribe the service to comments it creates.
 
+The API call uses Basic authentication with the `apikey` username, compatible with OpenProject versions predating Bearer token support. Invalid JSON payloads receive a 400 response.
+
 ## Español
 
 Un servicio verifica webhooks de OpenProject para nuevos paquetes de trabajo, evalúa si la solicitud está completa y añade un comentario de revisión. No cambia el estado.
@@ -43,6 +47,8 @@ python3 app.py
 Variables del servidor: `TYPESAFE_API_KEY, OPENPROJECT_WEBHOOK_SECRET, OPENPROJECT_URL, OPENPROJECT_API_TOKEN`. Mantén los secretos fuera del repositorio y de la configuración visible para usuarios.
 
 Crea un webhook firmado hacia `/webhook` para la creación de paquetes de trabajo; usa una cuenta API autorizada a comentar. No suscribas el servicio a los comentarios que crea.
+
+La llamada API usa autenticación Basic con el usuario `apikey`, compatible con versiones de OpenProject anteriores a la compatibilidad con tokens Bearer. Las cargas JSON inválidas reciben una respuesta 400.
 
 ## Verification / Vérification / Verificación
 

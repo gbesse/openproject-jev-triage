@@ -1,4 +1,5 @@
 """OpenProject work-package completeness review from signed webhooks."""
+import base64
 import json
 import os
 from pathlib import Path
@@ -23,7 +24,8 @@ def add_comment(work_id,result):
     if not base.startswith("https://"): raise ValueError("HTTPS required")
     raw=f"Jev review: {result['outcome']} (p={result['probability']:.3f}; policy={result['policyVersion']}; input={result['inputSha256'][:12]}). Human review required before changing status."
     body={"comment":{"raw":raw}}
-    req=Request(f"{base}/api/v3/work_packages/{work_id}/activities?notify=false",data=json.dumps(body).encode(),headers={"Authorization":"Bearer "+token,"Content-Type":"application/json"},method="POST")
+    auth=base64.b64encode(f"apikey:{token}".encode()).decode()
+    req=Request(f"{base}/api/v3/work_packages/{work_id}/activities?notify=false",data=json.dumps(body).encode(),headers={"Authorization":"Basic "+auth,"Content-Type":"application/json"},method="POST")
     with urlopen(req,timeout=15) as response: response.read()
 
 if __name__=="__main__":
