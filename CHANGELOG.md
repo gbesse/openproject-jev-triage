@@ -1,5 +1,9 @@
 # Changelog / Journal / Registro
 
+## 0.1.2
+
+Skip ordinary webhook replays via activity markers. / Ignorer les rejeux ordinaires grâce aux marqueurs d’activité. / Omitir repeticiones normales mediante marcadores de actividad.
+
 ## 0.1.1
 
 Use API-key Basic authentication and reject invalid JSON with 400. / Utiliser l’authentification Basic par clé API et rejeter le JSON invalide avec 400. / Usar autenticación Basic con clave API y rechazar JSON inválido con 400.
