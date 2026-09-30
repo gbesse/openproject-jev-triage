@@ -1,6 +1,6 @@
 # OpenProject Jev Triage
 
-Experimental community alpha v0.1.1 · MIT.
+Experimental community alpha v0.1.2 · MIT.
 
 ## Français
 
@@ -18,6 +18,8 @@ Créer un webhook signé vers `/webhook` sur la création de work packages ; uti
 
 L’appel API utilise l’authentification Basic avec le nom `apikey`, compatible avec les versions d’OpenProject antérieures à la prise en charge des jetons Bearer. Les charges JSON invalides reçoivent une réponse 400.
 
+Avant d’appeler Jev, le service lit les activités du work package et ignore une revue portant déjà le même texte et la même politique. Le compte API doit pouvoir lire ces activités. Des livraisons simultanées peuvent encore créer des commentaires en double.
+
 ## English
 
 A service verifies OpenProject webhooks for new work packages, evaluates request completeness, and adds a review comment. It does not change status.
@@ -34,6 +36,8 @@ Create a signed webhook to `/webhook` for work package creation; use an API acco
 
 The API call uses Basic authentication with the `apikey` username, compatible with OpenProject versions predating Bearer token support. Invalid JSON payloads receive a 400 response.
 
+Before calling Jev, the service reads work package activities and skips a review with the same text and policy. The API account must be able to read these activities. Concurrent deliveries can still create duplicate comments.
+
 ## Español
 
 Un servicio verifica webhooks de OpenProject para nuevos paquetes de trabajo, evalúa si la solicitud está completa y añade un comentario de revisión. No cambia el estado.
@@ -49,6 +53,8 @@ Variables del servidor: `TYPESAFE_API_KEY, OPENPROJECT_WEBHOOK_SECRET, OPENPROJE
 Crea un webhook firmado hacia `/webhook` para la creación de paquetes de trabajo; usa una cuenta API autorizada a comentar. No suscribas el servicio a los comentarios que crea.
 
 La llamada API usa autenticación Basic con el usuario `apikey`, compatible con versiones de OpenProject anteriores a la compatibilidad con tokens Bearer. Las cargas JSON inválidas reciben una respuesta 400.
+
+Antes de llamar a Jev, el servicio lee las actividades del paquete de trabajo y omite una revisión del mismo texto y política. La cuenta API debe poder leer esas actividades. Las entregas simultáneas aún pueden crear comentarios duplicados.
 
 ## Verification / Vérification / Verificación
 
