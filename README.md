@@ -1,8 +1,10 @@
 # OpenProject Jev Triage
 
-Experimental community alpha v0.1.2 · MIT.
+Experimental community alpha v0.1.3 · MIT.
 
 ## Français
+
+Exemple hors ligne : `python3 examples/offline_decisions.py` rejoue « Ajouter un bouton export ; les critères et le responsable sont documentés. » avec une réponse synthétique à forte puis faible probabilité. La faible probabilité reste en revue ; aucune clé ni requête réseau.
 
 Un service vérifie les webhooks OpenProject sur les nouveaux work packages, évalue la complétude de la demande et ajoute un commentaire de revue. Il ne modifie pas le statut.
 
@@ -22,6 +24,8 @@ Avant d’appeler Jev, le service lit les activités du work package et ignore u
 
 ## English
 
+Offline example: `python3 examples/offline_decisions.py` replays “Add an export button; acceptance criteria and owner are documented.” with synthetic high and low probability responses. Low probability remains in review; no key or network request.
+
 A service verifies OpenProject webhooks for new work packages, evaluates request completeness, and adds a review comment. It does not change status.
 
 Setup:
@@ -39,6 +43,8 @@ The API call uses Basic authentication with the `apikey` username, compatible wi
 Before calling Jev, the service reads work package activities and skips a review with the same text and policy. The API account must be able to read these activities. Concurrent deliveries can still create duplicate comments.
 
 ## Español
+
+Ejemplo sin conexión: `python3 examples/offline_decisions.py` reproduce «Añadir un botón de exportación; los criterios y el responsable están documentados.» con respuestas sintéticas de probabilidad alta y baja. La probabilidad baja queda para revisión; no requiere clave ni red.
 
 Un servicio verifica webhooks de OpenProject para nuevos paquetes de trabajo, evalúa si la solicitud está completa y añade un comentario de revisión. No cambia el estado.
 
