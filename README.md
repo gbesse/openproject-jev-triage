@@ -1,6 +1,6 @@
 # OpenProject Jev Triage
 
-Experimental community alpha v0.1.3 · MIT.
+Experimental community alpha v0.1.4 · MIT.
 
 ## Français
 
@@ -73,3 +73,11 @@ Tests use synthetic Jev responses and host event fixtures. Threshold `0.9` in `p
 Host reference / Référence de l’hôte / Referencia del host: https://www.openproject.org/docs/system-admin-guide/api-and-webhooks/
 
 The receiver listens on `127.0.0.1:8080` by default; use a TLS reverse proxy for remote webhooks. `LISTEN_HOST` and `PORT` can override the bind address. / Le service écoute par défaut sur `127.0.0.1:8080` ; utiliser un proxy TLS pour les webhooks distants. / El servicio escucha por defecto en `127.0.0.1:8080`; usa un proxy TLS para webhooks remotos.
+
+## October 2026 improvement · Amélioration d’octobre 2026 · Mejora de octubre de 2026
+
+Run `python3 examples/provenance_edit.py` to see that editing a work-package text changes its input hash, using synthetic responses only.
+
+Exécutez `python3 examples/provenance_edit.py` pour voir qu’une modification du texte d’un ticket change son empreinte d’entrée, avec des réponses synthétiques seulement.
+
+Ejecute `python3 examples/provenance_edit.py` para ver que editar el texto de una tarea cambia su huella de entrada, usando solo respuestas sintéticas.

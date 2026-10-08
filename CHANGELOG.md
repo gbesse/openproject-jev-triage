@@ -1,3 +1,7 @@
+## v0.1.4
+
+Offline work-package edit demo shows input-hash provenance. / La démo hors ligne montre l’empreinte de provenance après modification d’un ticket. / La demo sin conexión muestra la huella de procedencia tras editar una tarea.
+
 ## v0.1.3
 
 Offline synthetic high/low confidence decision example; no API key required.
